@@ -8,11 +8,11 @@ public class ListaEnlazada<T> {
     private int size;
 
 
+
     ListaEnlazada(){
         size = 0;
         head = null;
     }
-
 
     public void aggregar(T e){
         head = new Nodo<>(e,head);

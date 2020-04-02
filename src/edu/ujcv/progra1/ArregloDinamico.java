@@ -7,7 +7,10 @@ public class ArregloDinamico<T> {
     ArregloDinamico(){
         datos = (T[])new Object[45];  // new int[45]
         size = 0;
+
     }
+
+
     ArregloDinamico(T[] otroArreglo){
         datos = (T[])new Object[otroArreglo.length];
         size = otroArreglo.length;
@@ -31,8 +34,9 @@ public class ArregloDinamico<T> {
     }
 
     public T obtener(int index){
+
         if(index > size){
-            throw new IndexOutOfBoundsException(index);
+            System.out.println("error");
         }
         return datos[index];
     }

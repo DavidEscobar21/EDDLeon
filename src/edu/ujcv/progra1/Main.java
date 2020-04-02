@@ -1,6 +1,7 @@
 package edu.ujcv.progra1;
 
 import java.util.Scanner;
+import java.util.Stack;
 
 public class Main {
 
@@ -8,34 +9,39 @@ public class Main {
 	// write your code here
         // Busquedas
 
-        ArregloDinamico<Integer> miArreglo = new ArregloDinamico<>();
+        int [] arr = {1,2,3,4,5};
+        invertido(arr);
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("se le pediran 10 enteros");
-
-        for (int i = 0; i < 5; i++) {
-            System.out.println("ingrese un Entero");
-
-            if(sc.hasNextInt()) {
-                miArreglo.aggregar(sc.nextInt());
-            }else {sc.next();}
-        }
-
-        System.out.println("ingrese un elemento a buscar");
-        int e = sc.nextInt();
-
-        e = sequentialSearch(miArreglo,e);
-
-        if (e == -1){
-            System.out.println("no existe el emento");
-        }else{
-            System.out.println(String.format("el numero %d se encontro en el indice %d",e,e));
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i]+", ");
         }
 
 
-
-
+//        ArregloDinamico<Integer> miArreglo = new ArregloDinamico<>();
+//
+//        Scanner sc = new Scanner(System.in);
+//
+//        System.out.println("se le pediran 10 enteros");
+//
+//        for (int i = 0; i < 5; i++) {
+//            System.out.println("ingrese un Entero");
+//
+//            if(sc.hasNextInt()) {
+//                miArreglo.aggregar(sc.nextInt());
+//            }else {sc.next();}
+//        }
+//
+//        System.out.println("ingrese un elemento a buscar");
+//        int e = sc.nextInt();
+//
+//        e = sequentialSearch(miArreglo,e);
+//
+//        if (e == -1){
+//            System.out.println("no existe el emento");
+//        }else{
+//            System.out.println(String.format("el numero %d se encontro en el indice %d",e,e));
+//        }
+//
 
     }
 
@@ -104,4 +110,21 @@ public class Main {
         }
         return  c;
     }
+
+
+    
+    public static int[] invertido(int[] original){
+        Stack<Integer> stack = new Stack();
+        for (int i = 0; i < original.length ; i++) {
+            stack.push(original[i]);
+        }
+        for (int i = 0; i <original.length; i++) {
+            original[i] = stack.pop();
+        }
+        return original;
+
+    }
+
+
+
 }
